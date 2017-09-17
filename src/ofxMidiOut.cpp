@@ -95,6 +95,11 @@ bool ofxMidiOut::isVirtual() {
 }
 
 // -----------------------------------------------------------------------------
+void ofxMidiOut::sendClock() {
+    midiOut->sendClock();
+}
+
+// -----------------------------------------------------------------------------
 void ofxMidiOut::sendNoteOn(int channel, int pitch, int velocity) {
 	midiOut->sendNoteOn(channel, pitch, velocity);
 }

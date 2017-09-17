@@ -142,6 +142,7 @@ public:
 	/// references:
 	///     http://www.srm.com/qtma/davidsmidispec.html
 	///
+    void sendClock();
 	void sendNoteOn(int channel, int pitch, int velocity=64);
 	void sendNoteOff(int channel, int pitch, int velocity=64);
 	void sendControlChange(int channel, int control, int value);

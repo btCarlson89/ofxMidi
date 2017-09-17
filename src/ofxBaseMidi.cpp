@@ -108,6 +108,18 @@ bool ofxBaseMidiOut::isVirtual() {
 }
 
 // -----------------------------------------------------------------------------
+void ofxBaseMidiOut::sendClock() {
+    if(bMsgInProgress) {
+        ofLogWarning("ofxMidiOut") << "cannot send note on, byte stream in progress";
+        return;
+    }
+    
+    message.clear();
+    message.push_back(MIDI_TIME_CLOCK);
+    sendMessage();
+}
+
+// -----------------------------------------------------------------------------
 void ofxBaseMidiOut::sendNoteOn(int channel, int pitch, int velocity) {
 	
 	if(bMsgInProgress) {

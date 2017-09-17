@@ -83,6 +83,7 @@ public:
 	bool isOpen();
 	bool isVirtual();
 	
+    void sendClock();
 	void sendNoteOn(int channel, int pitch, int velocity);
 	void sendNoteOff(int channel, int pitch, int velocity);
 	void sendControlChange(int channel, int control, int value);
